@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /logo-lab/
+
+Sitemap: https://www.pyrion.com.ar/sitemap.xml
