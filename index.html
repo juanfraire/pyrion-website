@@ -1,56 +1,339 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pyrion</title>
-  <meta name="description" content="Pyrion — coming soon.">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#050810" />
+  <title>Pyrion — Optimización de contratos de energía para Grandes Usuarios del MEM</title>
+  <meta name="description" content="Pyrion optimiza contratos de energía y potencia para Grandes Usuarios del Mercado Eléctrico Mayorista argentino: MATER, MATE, MATP, spot, autogeneración PV+BESS y gestión de riesgo, con optimización estocástica de nivel científico." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.pyrion.com.ar/" />
+  <meta property="og:title" content="Pyrion — Inteligencia energética para el MEM" />
+  <meta property="og:description" content="Optimización de contratos de energía y potencia, autogeneración y riesgo para Grandes Usuarios del MEM argentino." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.pyrion.com.ar/" />
 
-    html, body { height: 100%; }
-
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #0b0f1a;
-      color: #e8ebf2;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      text-align: center;
-    }
-
-    main { padding: 2rem; }
-
-    .mark {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 2rem;
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 35%, #ffb347, #ff6b35 55%, #c0392b);
-      box-shadow: 0 0 60px rgba(255, 107, 53, 0.35);
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 8vw, 4rem);
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      color: #8a93a8;
-      font-size: 1.1rem;
-      letter-spacing: 0.05em;
-    }
-  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"><i></i></div>
+
+  <!-- ============================================== NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="#top">
+        <img src="assets/mark.svg" alt="Pyrion" width="26" height="26" />
+        <span>PYRION</span>
+      </a>
+      <div class="nav-links">
+        <a href="#solucion" data-i18n="nav.solution">Solución</a>
+        <a href="#plataforma" data-i18n="nav.platform">Plataforma</a>
+        <a href="#storm" data-i18n="nav.engine">Motor STORM</a>
+        <a href="#equipo" data-i18n="nav.team">Equipo</a>
+      </div>
+      <div class="nav-right">
+        <div class="lang-toggle" role="group" aria-label="Idioma">
+          <button type="button" data-lang-btn="es" aria-pressed="true">ES</button>
+          <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="nav-cta" href="#contacto">
+          <span data-i18n="nav.cta">Hablemos</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================== HERO -->
+  <header class="hero" id="top">
+    <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <div class="container hero-content">
+      <span class="eyebrow" data-i18n="hero.eyebrow">Grandes Usuarios · MEM · Res. SE 400/2025</span>
+
+      <h1 class="h-display" data-i18n-html="hero.h1">
+        La energía de su empresa,<br />
+        <span class="gradient">optimizada</span> como un portafolio.
+      </h1>
+
+      <p class="lede" data-i18n="hero.lede">
+        Pyrion diseña la estrategia de compra de energía y potencia de Grandes Usuarios
+        del Mercado Eléctrico Mayorista argentino: contratos MATER, MATE y MATP, mercado
+        spot, autogeneración solar y almacenamiento — co-optimizados bajo incertidumbre,
+        con riesgo medido y acotado.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contacto" data-i18n="hero.cta1">Calificar mi demanda</a>
+        <a class="btn btn-ghost" href="#solucion" data-i18n="hero.cta2">Conocer la solución</a>
+      </div>
+
+      <!-- floating metric chips (mouse-parallax layers) -->
+      <div class="hero-chips" aria-hidden="true">
+        <div class="chip" data-depth="0.5" style="--cx: 76%; --cy: 18%; --delay: 0s">
+          <span class="chip-value">−33<small>%</small></span>
+          <span class="chip-label" data-i18n="hero.chip1">costo vs tarifa GUDI</span>
+        </div>
+        <div class="chip" data-depth="0.9" style="--cx: 86%; --cy: 52%; --delay: 1.3s">
+          <span class="chip-value">35.040</span>
+          <span class="chip-label" data-i18n="hero.chip2">intervalos de 15 min / año</span>
+        </div>
+        <div class="chip" data-depth="0.7" style="--cx: 70%; --cy: 80%; --delay: 2.1s">
+          <span class="chip-value">CVaR<small>α</small></span>
+          <span class="chip-label" data-i18n="hero.chip3">riesgo de cola acotado</span>
+        </div>
+      </div>
+    </div>
+
+    <a class="scroll-hint" href="#solucion" aria-label="Bajar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </header>
+
   <main>
-    <div class="mark" aria-hidden="true"></div>
-    <h1>Pyrion</h1>
-    <p>Coming soon.</p>
+    <!-- ============================================== SOLUCIÓN -->
+    <section class="section" id="solucion">
+      <div class="container">
+        <span class="kicker reveal" data-i18n="sol.kicker">Solución</span>
+        <h2 class="h-section reveal" data-i18n="sol.title">Tres capas, una decisión óptima.</h2>
+        <p class="section-lede reveal" data-i18n="sol.lede">
+          El costo eléctrico de un Gran Usuario no se decide en una factura: se decide en
+          la estructura de contratos, en el dimensionamiento de activos y en cómo se mide
+          el riesgo. Pyrion integra las tres capas en un único modelo de decisión.
+        </p>
+
+        <div class="cards-3">
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3v6h6M14 3l6 6M6 21h12a2 2 0 0 0 2-2V9l-6-6H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2z"/><path d="M8 13h8M8 17h5"/></svg>
+            </div>
+            <h3 data-i18n="sol.c1.title">Contratos &amp; mercado</h3>
+            <p data-i18n="sol.c1.body">
+              Estructuración y simulación de portafolios MATER, MATE y MATP frente al spot,
+              bajo el marco de la Res. SE 400/2025: volúmenes mensuales, cobertura de potencia
+              (PPAD), penalidades take-or-pay y sustitución entre instrumentos.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg>
+            </div>
+            <h3 data-i18n="sol.c2.title">Activos detrás del medidor</h3>
+            <p data-i18n="sol.c2.body">
+              Dimensionamiento conjunto de generación solar fotovoltaica y almacenamiento
+              en baterías como cobertura física: CAPEX anualizado, degradación, autoconsumo
+              y arbitraje horario, evaluados contra cada escenario de precios y demanda.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l5-6 4 3 5-8 4 5"/><path d="M3 21h18"/></svg>
+            </div>
+            <h3 data-i18n="sol.c3.title">Inteligencia analítica</h3>
+            <p data-i18n="sol.c3.body">
+              Seguimiento de facturación CAMMESA, proyecciones de precios estacionales,
+              análisis de curvas de carga de 15 minutos y métricas de riesgo: el valor
+              esperado importa, pero la cola de la distribución también.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== PLATAFORMA / DASHBOARD -->
+    <section class="section section-alt" id="plataforma">
+      <div class="container">
+        <span class="kicker reveal" data-i18n="dash.kicker">Plataforma</span>
+        <h2 class="h-section reveal" data-i18n="dash.title">Del perfil de carga a la decisión.</h2>
+        <p class="section-lede reveal" data-i18n="dash.lede">
+          Cargamos su demanda real — cada 15 minutos, un año completo — y devolvemos una
+          estrategia: cuánto contratar, cuánto generar, cuánto almacenar y cuánta exposición
+          al spot tolerar.
+        </p>
+
+        <div class="dash reveal">
+          <div class="dash-head">
+            <div class="dash-dot"></div><div class="dash-dot"></div><div class="dash-dot"></div>
+            <span class="dash-title" data-i18n="dash.win">pyrion · análisis de demanda</span>
+          </div>
+
+          <div class="dash-body">
+            <div class="dash-chart">
+              <svg id="demand-curve" viewBox="0 0 640 240" preserveAspectRatio="none" aria-label="Curva de demanda diaria"></svg>
+              <div class="dash-legend">
+                <span><i class="lg lg-demand"></i><em data-i18n="dash.leg1">Demanda</em></span>
+                <span><i class="lg lg-pv"></i><em data-i18n="dash.leg2">Solar PV</em></span>
+                <span><i class="lg lg-bess"></i><em data-i18n="dash.leg3">BESS</em></span>
+                <span><i class="lg lg-peak"></i><em data-i18n="dash.leg4">Pico PPAD 18–23 h</em></span>
+              </div>
+            </div>
+
+            <div class="dash-kpis">
+              <div class="kpi">
+                <span class="kpi-value"><b class="count" data-count="33" data-decimals="0" data-prefix="−" data-suffix="%">0</b></span>
+                <span class="kpi-label" data-i18n="dash.k1">ahorro vs tarifa GUDI</span>
+              </div>
+              <div class="kpi">
+                <span class="kpi-value"><b class="count" data-count="520" data-decimals="0" data-suffix=" kUSD">0</b></span>
+                <span class="kpi-label" data-i18n="dash.k2">costo anual co-optimizado</span>
+              </div>
+              <div class="kpi">
+                <span class="kpi-value"><b class="count" data-count="106" data-decimals="0" data-suffix=" kUSD">0</b></span>
+                <span class="kpi-label" data-i18n="dash.k3">ahorro anual vs solo-contratos</span>
+              </div>
+              <div class="kpi">
+                <span class="kpi-value"><b class="count" data-count="100" data-decimals="0" data-suffix="%">0</b></span>
+                <span class="kpi-label" data-i18n="dash.k4">decisiones auditables, sin caja negra</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- energy flow strip -->
+          <div class="dash-flow" aria-hidden="true">
+            <svg id="flow-map" viewBox="0 0 640 120" preserveAspectRatio="xMidYMid meet"></svg>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="step reveal">
+            <span class="step-n">01</span>
+            <h4 data-i18n="dash.s1.t">Datos</h4>
+            <p data-i18n="dash.s1.b">Curva de carga de 15 minutos (EPEC/CAMMESA), facturación histórica y tarifas vigentes.</p>
+          </div>
+          <div class="step reveal">
+            <span class="step-n">02</span>
+            <h4 data-i18n="dash.s2.t">Escenarios</h4>
+            <p data-i18n="dash.s2.b">Generación estocástica de precios spot, demanda y recurso solar: cientos de futuros posibles.</p>
+          </div>
+          <div class="step reveal">
+            <span class="step-n">03</span>
+            <h4 data-i18n="dash.s3.t">Optimización</h4>
+            <p data-i18n="dash.s3.b">Un único modelo matemático decide contratos y activos contra todos los escenarios a la vez.</p>
+          </div>
+          <div class="step reveal">
+            <span class="step-n">04</span>
+            <h4 data-i18n="dash.s4.t">Estrategia</h4>
+            <p data-i18n="dash.s4.b">Informe ejecutivo: portafolio recomendado, ahorro esperado, exposición al riesgo y plan de implementación.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== STORM ENGINE -->
+    <section class="section" id="storm">
+      <div class="container storm-grid">
+        <div>
+          <span class="kicker reveal" data-i18n="storm.kicker">El motor</span>
+          <h2 class="h-section reveal" data-i18n="storm.title">Ciencia publicada, no una planilla.</h2>
+          <p class="section-lede reveal" data-i18n="storm.lede">
+            Detrás de Pyrion está STORM: un modelo de optimización estocástica de dos etapas
+            desarrollado por nuestro equipo y documentado en una publicación científica.
+            Cada recomendación es reproducible, auditable y defendible frente a un directorio.
+          </p>
+          <ul class="storm-list reveal">
+            <li data-i18n="storm.f1">Co-optimiza contratos, PV, BESS y respuesta de demanda en un solo problema.</li>
+            <li data-i18n="storm.f2">Riesgo de cola explícito vía CVaR: usted elige cuánta aversión al riesgo.</li>
+            <li data-i18n="storm.f3">Resolución de 15 minutos sobre un año completo de operación.</li>
+            <li data-i18n="storm.f4">Validado contra estrategias de referencia: tarifa GUDI, solo-contratos, solo-activos.</li>
+          </ul>
+          <div class="hero-actions reveal">
+            <a class="btn btn-ghost" href="https://juanfraire.github.io/storm" target="_blank" rel="noopener" data-i18n="storm.cta1">Sitio técnico de STORM</a>
+            <a class="btn btn-ghost" href="https://github.com/juanfraire/storm" target="_blank" rel="noopener" data-i18n="storm.cta2">Código abierto</a>
+          </div>
+        </div>
+        <div class="storm-card reveal" aria-hidden="true">
+          <pre class="code"><code><span class="c"># STORM — two-stage stochastic MILP</span>
+<span class="k">minimize</span>  CAPEX<sub>anual</sub> + 𝔼[OPEX(ξ)]
+          + β · CVaR<sub>α</sub>[OPEX(ξ)]
+
+<span class="k">subject to</span>
+  balance(t, ξ)     <span class="c"># cada 15 min</span>
+  contratos(m)      <span class="c"># MATER · MATE · MATP</span>
+  pv + bess         <span class="c"># activos físicos</span>
+  red(t, ξ)         <span class="c"># spot + peajes</span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== EQUIPO -->
+    <section class="section section-alt" id="equipo">
+      <div class="container">
+        <span class="kicker reveal" data-i18n="team.kicker">Quiénes somos</span>
+        <h2 class="h-section reveal" data-i18n="team.title">Perfil científico, foco de negocio.</h2>
+        <p class="section-lede reveal" data-i18n="team.lede">
+          Un equipo con trayectoria en investigación computacional e ingeniería,
+          aplicada a un problema concreto: el costo eléctrico de la industria argentina.
+        </p>
+
+        <div class="cards-3">
+          <article class="card person reveal">
+            <div class="avatar" aria-hidden="true">GM</div>
+            <h3>Gonzalo Martínez Carreras</h3>
+            <p class="person-role" data-i18n="team.p1.role">Estrategia energética y regulación del MEM</p>
+            <p data-i18n="team.p1.bio">Especialista en contratación de energía para Grandes Usuarios, mercado a término y normativa de la Secretaría de Energía.</p>
+          </article>
+          <article class="card person reveal">
+            <div class="avatar" aria-hidden="true">JF</div>
+            <h3>Juan A. Fraire</h3>
+            <p class="person-role" data-i18n="team.p2.role">Modelado computacional y optimización</p>
+            <p data-i18n="team.p2.bio">Investigador en Inria (Francia) y CONICET–UNC. Autor principal del modelo STORM y de más de un centenar de publicaciones científicas.</p>
+          </article>
+          <article class="card person reveal">
+            <div class="avatar" aria-hidden="true">OO</div>
+            <h3>Oscar A. Oviedo</h3>
+            <p class="person-role" data-i18n="team.p3.role">Simulación, energía y ciencia de datos</p>
+            <p data-i18n="team.p3.bio">Investigador de CONICET–UNC con trayectoria en simulación de sistemas energéticos, almacenamiento electroquímico y bioenergía.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== CONTACTO -->
+    <section class="section" id="contacto">
+      <div class="container contact-grid">
+        <div>
+          <span class="kicker reveal" data-i18n="contact.kicker">Contacto</span>
+          <h2 class="h-section reveal" data-i18n="contact.title">¿Cuánto está dejando sobre la mesa?</h2>
+          <p class="section-lede reveal" data-i18n="contact.lede">
+            Cuéntenos sobre su demanda y le devolvemos un diagnóstico preliminar sin costo:
+            categoría MEM, instrumentos disponibles y potencial de ahorro estimado.
+          </p>
+        </div>
+        <form class="contact-form reveal" id="contact-form">
+          <div class="form-row">
+            <label><span data-i18n="contact.f1">Empresa</span><input type="text" name="empresa" required /></label>
+            <label><span data-i18n="contact.f2">Nombre y cargo</span><input type="text" name="nombre" required /></label>
+          </div>
+          <div class="form-row">
+            <label><span data-i18n="contact.f3">Email</span><input type="email" name="email" required /></label>
+            <label><span data-i18n="contact.f4">Demanda anual estimada (MWh)</span><input type="text" name="demanda" /></label>
+          </div>
+          <label><span data-i18n="contact.f5">Situación actual (distribuidora, contratos vigentes, autogeneración…)</span><textarea name="situacion" rows="4"></textarea></label>
+          <button class="btn btn-primary" type="submit" data-i18n="contact.send">Solicitar diagnóstico</button>
+          <p class="form-note" data-i18n="contact.note">Se abrirá su cliente de correo con el mensaje listo para enviar.</p>
+        </form>
+      </div>
+    </section>
   </main>
+
+  <!-- ============================================== FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="nav-brand"><img src="assets/mark.svg" alt="" width="22" height="22" /><span>PYRION</span></div>
+      <p data-i18n="footer.line">Inteligencia energética para Grandes Usuarios del MEM · Córdoba, Argentina</p>
+      <p class="footer-fine">© 2026 Pyrion · <a href="https://juanfraire.github.io/storm" target="_blank" rel="noopener">STORM</a></p>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
