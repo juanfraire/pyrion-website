@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Pyrion mark for light backgrounds (print, documents) -->
+  <path fill="#2563EB" stroke="#2563EB" stroke-width="1.6" stroke-linejoin="round" fill-rule="evenodd"
+    d="M16 2.2 27.9 9.1 v13.8 L16 29.8 4.1 22.9 V9.1 Z
+       M19.3 6.8 9.6 17.9 h5 L12.7 25.2 22.4 14.1 h-5 Z"/>
+</svg>

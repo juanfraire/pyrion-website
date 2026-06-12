@@ -1,13 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <defs>
-    <linearGradient id="pg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+    <linearGradient id="pyrion-g" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#5BD4FF"/>
       <stop offset="1" stop-color="#4F8BFF"/>
     </linearGradient>
   </defs>
-  <!-- P drawn as a single power-flow stroke -->
-  <path d="M10 28 V6 h8 a6 6 0 0 1 0 12 h-8" stroke="url(#pg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- energy node leaving the P -->
-  <circle cx="25" cy="25" r="2.4" fill="#5BD4FF"/>
-  <path d="M18 18 L23 23" stroke="#5BD4FF" stroke-width="2" stroke-linecap="round" stroke-dasharray="0.5 3.5"/>
+  <!-- Pyrion mark: lightning bolt carved from a hexagonal grid cell -->
+  <path fill="url(#pyrion-g)" stroke="url(#pyrion-g)" stroke-width="1.6" stroke-linejoin="round" fill-rule="evenodd"
+    d="M16 2.2 27.9 9.1 v13.8 L16 29.8 4.1 22.9 V9.1 Z
+       M19.3 6.8 9.6 17.9 h5 L12.7 25.2 22.4 14.1 h-5 Z"/>
 </svg>

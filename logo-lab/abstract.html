@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Pyrion — abstract marks (no letterform)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" />
+<style>
+  :root { --bg:#050810; --surface:#0F1524; --border:#1E2A44; --text:#E6EDF7; --muted:#6A7488; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:Inter,sans-serif; padding:40px; }
+  h1 { font-family:'Space Grotesk'; font-size:1.3rem; margin-bottom:6px; }
+  .sub { color:var(--muted); font-size:.85rem; margin-bottom:32px; }
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1280px; }
+  .cell { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:18px; }
+  .cell h2 { font:600 .95rem 'Space Grotesk'; }
+  .cell p { font-size:.78rem; color:var(--muted); min-height:3.2em; }
+  .stage { display:flex; align-items:center; gap:24px; }
+  .big { width:110px; height:110px; flex:none; }
+  .sizes { display:flex; align-items:flex-end; gap:12px; }
+  .s28 { width:28px; height:28px; } .s16 { width:16px; height:16px; }
+  .wordmark { display:flex; align-items:center; gap:12px; font:700 1.2rem 'Space Grotesk'; letter-spacing:.2em; }
+  .wordmark svg { width:32px; height:32px; }
+  .onlight { background:#F2F5FA; border-radius:10px; padding:10px 14px; }
+  .onlight .wordmark { color:#0A0E1A; }
+</style>
+</head>
+<body>
+<h1>Pyrion — abstract marks, no letterform</h1>
+<p class="sub">Six symbol directions. Each at 110 / 28 / 16 px plus dark and light lockups.</p>
+
+<div class="grid">
+
+  <!-- ====== G: SCENARIO FAN ====== -->
+  <div class="cell">
+    <h2>G · Scenario fan</h2>
+    <p>Many possible futures fan out from one point; the optimized trajectory cuts through and lands on the decision dot. STORM's stochastic story, distilled.</p>
+    <div class="stage">
+      <svg class="big" viewBox="0 0 32 32" fill="none">
+        <g stroke="#4F8BFF" opacity="0.5" stroke-width="1.4" stroke-linecap="round">
+          <path d="M4 26 C12 24 18 18 28 16"/>
+          <path d="M4 26 C12 20 18 12 27 8"/>
+          <path d="M4 26 C10 26 20 25 28 24"/>
+        </g>
+        <path d="M4 26 C12 22 16 15 24 12" stroke="#5BD4FF" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="26.5" cy="11" r="2.6" fill="#5BD4FF"/>
+        <circle cx="4" cy="26" r="2" fill="#4F8BFF"/>
+      </svg>
+      <div class="sizes">
+        <svg class="s28" viewBox="0 0 32 32" fill="none"><g stroke="#4F8BFF" opacity="0.5" stroke-width="1.8" stroke-linecap="round"><path d="M4 26 C12 24 18 18 28 16"/><path d="M4 26 C12 20 18 12 27 8"/><path d="M4 26 C10 26 20 25 28 24"/></g><path d="M4 26 C12 22 16 15 24 12" stroke="#5BD4FF" stroke-width="3" stroke-linecap="round"/><circle cx="26.5" cy="11" r="3" fill="#5BD4FF"/><circle cx="4" cy="26" r="2.4" fill="#4F8BFF"/></svg>
+        <svg class="s16" viewBox="0 0 32 32" fill="none"><path d="M4 26 C12 22 16 15 24 12" stroke="#5BD4FF" stroke-width="4" stroke-linecap="round"/><circle cx="26.5" cy="11" r="4" fill="#5BD4FF"/><circle cx="4" cy="26" r="3" fill="#4F8BFF"/></svg>
+      </div>
+    </div>
+    <div class="wordmark"><svg viewBox="0 0 32 32" fill="none"><g stroke="#4F8BFF" opacity="0.5" stroke-width="1.4" stroke-linecap="round"><path d="M4 26 C12 24 18 18 28 16"/><path d="M4 26 C12 20 18 12 27 8"/><path d="M4 26 C10 26 20 25 28 24"/></g><path d="M4 26 C12 22 16 15 24 12" stroke="#5BD4FF" stroke-width="2.6" stroke-linecap="round"/><circle cx="26.5" cy="11" r="2.6" fill="#5BD4FF"/><circle cx="4" cy="26" r="2" fill="#4F8BFF"/></svg>PYRION</div>
+    <div class="onlight"><div class="wordmark"><svg viewBox="0 0 32 32" fill="none"><g stroke="#2563EB" opacity="0.45" stroke-width="1.4" stroke-linecap="round"><path d="M4 26 C12 24 18 18 28 16"/><path d="M4 26 C12 20 18 12 27 8"/><path d="M4 26 C10 26 20 25 28 24"/></g><path d="M4 26 C12 22 16 15 24 12" stroke="#1D4ED8" stroke-width="2.6" stroke-linecap="round"/><circle cx="26.5" cy="11" r="2.6" fill="#1D4ED8"/><circle cx="4" cy="26" r="2" fill="#2563EB"/></svg>PYRION</div></div>
+  </div>
+
+  <!-- ====== H: HEX BOLT ====== -->
+  <div class="cell">
+    <h2>H · Hex bolt</h2>
+    <p>Lightning bolt carved out of a solid hexagon — the industrial cell of the grid. Compact, heavy, badge-like; excellent at favicon size.</p>
+    <div class="stage">
+      <svg class="big" viewBox="0 0 32 32">
+        <defs><linearGradient id="hg" x1="4" y1="4" x2="28" y2="28"><stop offset="0" stop-color="#5BD4FF"/><stop offset="1" stop-color="#4F8BFF"/></linearGradient></defs>
+        <path fill="url(#hg)" fill-rule="evenodd" d="M16 1.5 28.5 8.75 v14.5 L16 30.5 3.5 23.25 V8.75 Z
+          M18.6 6.5 10 17.5 h4.6 L13.2 25.5 22 14.6 h-4.7 Z"/>
+      </svg>
+      <div class="sizes">
+        <svg class="s28" viewBox="0 0 32 32"><path fill="#5BD4FF" fill-rule="evenodd" d="M16 1.5 28.5 8.75 v14.5 L16 30.5 3.5 23.25 V8.75 Z M18.6 6.5 10 17.5 h4.6 L13.2 25.5 22 14.6 h-4.7 Z"/></svg>
+        <svg class="s16" viewBox="0 0 32 32"><path fill="#5BD4FF" fill-rule="evenodd" d="M16 1.5 28.5 8.75 v14.5 L16 30.5 3.5 23.25 V8.75 Z M18.6 6.5 10 17.5 h4.6 L13.2 25.5 22 14.6 h-4.7 Z"/></svg>
+      </div>
+    </div>
+    <div class="wordmark"><svg viewBox="0 0 32 32"><path fill="#5BD4FF" fill-rule="evenodd" d="M16 1.5 28.5 8.75 v14.5 L16 30.5 3.5 23.25 V8.75 Z M18.6 6.5 10 17.5 h4.6 L13.2 25.5 22 14.6 h-4.7 Z"/></svg>PYRION</div>
+    <div class="onlight"><div class="wordmark"><svg viewBox="0 0 32 32"><path fill="#2563EB" fill-rule="evenodd" d="M16 1.5 28.5 8.75 v14.5 L16 30.5 3.5 23.25 V8.75 Z M18.6 6.5 10 17.5 h4.6 L13.2 25.5 22 14.6 h-4.7 Z"/></svg>PYRION</div></div>
+  </div>
+
+  <!-- ====== I: ANGULAR FLAME ====== -->
+  <div class="cell">
+    <h2>I · Angular flame</h2>
+    <p>"Pyr" honored properly this time: a faceted, crystalline flame built from sharp shards — reads fire, not droplet, even in blue.</p>
+    <div class="stage">
+      <svg class="big" viewBox="0 0 32 32">
+        <defs><linearGradient id="ig" x1="16" y1="2" x2="16" y2="30"><stop offset="0" stop-color="#5BD4FF"/><stop offset="1" stop-color="#4F8BFF"/></linearGradient></defs>
+        <path fill="url(#ig)" d="M16 1.5 22 12 18.5 10.5 24.5 21 16 30.5 7.5 21 13.5 10.5 10 12 Z"/>
+        <path fill="#050810" opacity="0.35" d="M16 1.5 13.5 10.5 10 12 16 1.5 Z M16 30.5 7.5 21 13.5 10.5 16 30.5 Z" />
+      </svg>
+      <div class="sizes">
+        <svg class="s28" viewBox="0 0 32 32"><path fill="#5BD4FF" d="M16 1.5 22 12 18.5 10.5 24.5 21 16 30.5 7.5 21 13.5 10.5 10 12 Z"/></svg>
+        <svg class="s16" viewBox="0 0 32 32"><path fill="#5BD4FF" d="M16 1.5 22 12 18.5 10.5 24.5 21 16 30.5 7.5 21 13.5 10.5 10 12 Z"/></svg>
+      </div>
+    </div>
+    <div class="wordmark"><svg viewBox="0 0 32 32"><path fill="#5BD4FF" d="M16 1.5 22 12 18.5 10.5 24.5 21 16 30.5 7.5 21 13.5 10.5 10 12 Z"/></svg>PYRION</div>
+    <div class="onlight"><div class="wordmark"><svg viewBox="0 0 32 32"><path fill="#2563EB" d="M16 1.5 22 12 18.5 10.5 24.5 21 16 30.5 7.5 21 13.5 10.5 10 12 Z"/></svg>PYRION</div></div>
+  </div>
+
+  <!-- ====== J: PULSE PEAK ====== -->
+  <div class="cell">
+    <h2>J · Pulse peak</h2>
+    <p>A load curve flatlining, spiking, and being brought back down — the demand peak Pyrion shaves. One line, one story.</p>
+    <div class="stage">
+      <svg class="big" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="13.5" stroke="#4F8BFF" stroke-width="1.6" opacity="0.55"/>
+        <path d="M5 19 h6 l3 -9.5 4 14 3 -8 h6" stroke="#5BD4FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="sizes">
+        <svg class="s28" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13.5" stroke="#4F8BFF" stroke-width="2" opacity="0.55"/><path d="M5 19 h6 l3 -9.5 4 14 3 -8 h6" stroke="#5BD4FF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="s16" viewBox="0 0 32 32" fill="none"><path d="M3 19 h7 l3.5 -11 4.5 16 3.5 -9 h7" stroke="#5BD4FF" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+    <div class="wordmark"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13.5" stroke="#4F8BFF" stroke-width="1.6" opacity="0.55"/><path d="M5 19 h6 l3 -9.5 4 14 3 -8 h6" stroke="#5BD4FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>PYRION</div>
+    <div class="onlight"><div class="wordmark"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13.5" stroke="#2563EB" stroke-width="1.6" opacity="0.5"/><path d="M5 19 h6 l3 -9.5 4 14 3 -8 h6" stroke="#1D4ED8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>PYRION</div></div>
+  </div>
+
+  <!-- ====== K: ION ====== -->
+  <div class="cell">
+    <h2>K · Ion</h2>
+    <p>Pyr-ION literal: charged nucleus, single clean orbit, electron at apogee. Scientific and calm — the "published science" positioning as a symbol.</p>
+    <div class="stage">
+      <svg class="big" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="5" fill="#5BD4FF"/>
+        <ellipse cx="16" cy="16" rx="13" ry="5.5" stroke="#4F8BFF" stroke-width="1.6" transform="rotate(-24 16 16)"/>
+        <circle cx="27" cy="10.5" r="2.4" fill="#E6EDF7"/>
+      </svg>
+      <div class="sizes">
+        <svg class="s28" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="5.5" fill="#5BD4FF"/><ellipse cx="16" cy="16" rx="13" ry="5.5" stroke="#4F8BFF" stroke-width="2" transform="rotate(-24 16 16)"/><circle cx="27" cy="10.5" r="2.8" fill="#E6EDF7"/></svg>
+        <svg class="s16" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="6" fill="#5BD4FF"/><ellipse cx="16" cy="16" rx="13.5" ry="6" stroke="#4F8BFF" stroke-width="2.6" transform="rotate(-24 16 16)"/><circle cx="27.5" cy="10" r="3.2" fill="#E6EDF7"/></svg>
+      </div>
+    </div>
+    <div class="wordmark"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="5" fill="#5BD4FF"/><ellipse cx="16" cy="16" rx="13" ry="5.5" stroke="#4F8BFF" stroke-width="1.6" transform="rotate(-24 16 16)"/><circle cx="27" cy="10.5" r="2.4" fill="#E6EDF7"/></svg>PYRION</div>
+    <div class="onlight"><div class="wordmark"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="5" fill="#2563EB"/><ellipse cx="16" cy="16" rx="13" ry="5.5" stroke="#2563EB" stroke-width="1.6" opacity="0.7" transform="rotate(-24 16 16)"/><circle cx="27" cy="10.5" r="2.4" fill="#0A0E1A"/></svg>PYRION</div></div>
+  </div>
+
+  <!-- ====== L: CONVERGENCE ====== -->
+  <div class="cell">
+    <h2>L · Convergence</h2>
+    <p>Three energy sources (contracts, solar, storage) converge into a single bright node — co-optimization itself as the mark.</p>
+    <div class="stage">
+      <svg class="big" viewBox="0 0 32 32" fill="none">
+        <g stroke-width="2.2" stroke-linecap="round">
+          <path d="M5 6 C11 8 13 11 15 14.5" stroke="#4F8BFF"/>
+          <path d="M27 6 C21 8 19 11 17 14.5" stroke="#5BD4FF"/>
+          <path d="M16 3 V13" stroke="#B58CFF"/>
+        </g>
+        <circle cx="16" cy="19" r="4.6" fill="#5BD4FF"/>
+        <circle cx="16" cy="19" r="8.2" stroke="#4F8BFF" stroke-width="1.2" opacity="0.5"/>
+        <path d="M16 25 v4" stroke="#5BD4FF" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <div class="sizes">
+        <svg class="s28" viewBox="0 0 32 32" fill="none"><g stroke-width="2.6" stroke-linecap="round"><path d="M5 6 C11 8 13 11 15 14.5" stroke="#4F8BFF"/><path d="M27 6 C21 8 19 11 17 14.5" stroke="#5BD4FF"/><path d="M16 3 V13" stroke="#B58CFF"/></g><circle cx="16" cy="19" r="5.2" fill="#5BD4FF"/><path d="M16 26 v3.5" stroke="#5BD4FF" stroke-width="2.6" stroke-linecap="round"/></svg>
+        <svg class="s16" viewBox="0 0 32 32" fill="none"><g stroke-width="3.4" stroke-linecap="round"><path d="M5 6 C11 8 13 11 15 14.5" stroke="#4F8BFF"/><path d="M27 6 C21 8 19 11 17 14.5" stroke="#5BD4FF"/><path d="M16 3 V13" stroke="#B58CFF"/></g><circle cx="16" cy="20" r="6" fill="#5BD4FF"/></svg>
+      </div>
+    </div>
+    <div class="wordmark"><svg viewBox="0 0 32 32" fill="none"><g stroke-width="2.2" stroke-linecap="round"><path d="M5 6 C11 8 13 11 15 14.5" stroke="#4F8BFF"/><path d="M27 6 C21 8 19 11 17 14.5" stroke="#5BD4FF"/><path d="M16 3 V13" stroke="#B58CFF"/></g><circle cx="16" cy="19" r="4.6" fill="#5BD4FF"/><path d="M16 25 v4" stroke="#5BD4FF" stroke-width="2.2" stroke-linecap="round"/></svg>PYRION</div>
+    <div class="onlight"><div class="wordmark"><svg viewBox="0 0 32 32" fill="none"><g stroke-width="2.2" stroke-linecap="round"><path d="M5 6 C11 8 13 11 15 14.5" stroke="#2563EB"/><path d="M27 6 C21 8 19 11 17 14.5" stroke="#1D4ED8"/><path d="M16 3 V13" stroke="#7C3AED"/></g><circle cx="16" cy="19" r="4.6" fill="#1D4ED8"/><path d="M16 25 v4" stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round"/></svg>PYRION</div></div>
+  </div>
+
+</div>
+</body>
+</html>

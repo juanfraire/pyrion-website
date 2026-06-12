@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Pyrion — logo refinement: bolt P</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500&display=swap" />
+<style>
+  :root { --bg:#050810; --surface:#0F1524; --border:#1E2A44; --text:#E6EDF7; --muted:#6A7488; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:Inter,sans-serif; padding:40px; }
+  h1 { font-family:'Space Grotesk'; font-size:1.3rem; margin-bottom:6px; }
+  .sub { color:var(--muted); font-size:.85rem; margin-bottom:32px; }
+  .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; max-width:1180px; }
+  .cell { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:28px; display:flex; flex-direction:column; gap:18px; }
+  .cell h2 { font:600 .95rem 'Space Grotesk'; }
+  .cell p { font-size:.78rem; color:var(--muted); min-height:2.4em; }
+  .stage { display:flex; align-items:center; gap:28px; }
+  .big { width:120px; height:120px; flex:none; }
+  .sizes { display:flex; align-items:flex-end; gap:14px; }
+  .s48 { width:48px; height:48px; } .s28 { width:28px; height:28px; } .s16 { width:16px; height:16px; }
+  .wordmark { display:flex; align-items:center; gap:12px; font:700 1.3rem 'Space Grotesk'; letter-spacing:.2em; }
+  .wordmark svg { width:36px; height:36px; }
+  .onlight { background:#F2F5FA; border-radius:10px; padding:10px 14px; }
+  .onlight .wordmark { color:#0A0E1A; }
+  .row { display:flex; gap:14px; align-items:center; }
+</style>
+</head>
+<body>
+<h1>Bolt-P — refinement round</h1>
+<p class="sub">Four treatments of concept B. Sizes: 120 / 48 / 28 / 16 px, lockup dark, lockup light.</p>
+
+<div class="grid">
+
+  <!-- ====== B1: FLAT, SHARP BOLT ====== -->
+  <div class="cell">
+    <h2>B1 · Flat, sharp bolt</h2>
+    <p>Crisp geometric P, classic six-point bolt cut from the bowl. Single flat cyan — maximum reproducibility (print, embroidery, stamp).</p>
+    <div class="stage">
+      <svg class="big" viewBox="0 0 32 32"><path fill="#5BD4FF" fill-rule="evenodd" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z M18.8 5.5 12.2 14 h3.6 l-1.8 6.5 6.8 -8.6 h-3.7 Z"/></svg>
+      <div class="sizes">
+        <svg class="s48" viewBox="0 0 32 32"><path fill="#5BD4FF" fill-rule="evenodd" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z M18.8 5.5 12.2 14 h3.6 l-1.8 6.5 6.8 -8.6 h-3.7 Z"/></svg>
+        <svg class="s28" viewBox="0 0 32 32"><path fill="#5BD4FF" fill-rule="evenodd" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z M18.8 5.5 12.2 14 h3.6 l-1.8 6.5 6.8 -8.6 h-3.7 Z"/></svg>
+        <svg class="s16" viewBox="0 0 32 32"><path fill="#5BD4FF" fill-rule="evenodd" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z M18.8 5.5 12.2 14 h3.6 l-1.8 6.5 6.8 -8.6 h-3.7 Z"/></svg>
+      </div>
+    </div>
+    <div class="wordmark"><svg viewBox="0 0 32 32"><path fill="#5BD4FF" fill-rule="evenodd" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z M18.8 5.5 12.2 14 h3.6 l-1.8 6.5 6.8 -8.6 h-3.7 Z"/></svg>PYRION</div>
+    <div class="onlight"><div class="wordmark"><svg viewBox="0 0 32 32"><path fill="#2563EB" fill-rule="evenodd" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z M18.8 5.5 12.2 14 h3.6 l-1.8 6.5 6.8 -8.6 h-3.7 Z"/></svg>PYRION</div></div>
+  </div>
+
+  <!-- ====== B2: GRADIENT + SOFT CORNERS ====== -->
+  <div class="cell">
+    <h2>B2 · Gradient, soft corners</h2>
+    <p>Same skeleton with rounded outer corners and the site's cyan→azure gradient. Warmer, more "product brand".</p>
+    <div class="stage">
+      <svg class="big" viewBox="0 0 32 32">
+        <defs><linearGradient id="g2" x1="8" y1="2" x2="26" y2="30"><stop offset="0" stop-color="#5BD4FF"/><stop offset="1" stop-color="#4F8BFF"/></linearGradient></defs>
+        <path fill="url(#g2)" stroke="url(#g2)" stroke-width="2.4" stroke-linejoin="round" fill-rule="evenodd" d="M9.2 28.8 V3.2 h8.3 a8.55 8.55 0 0 1 0 17.1 h-3.3 v8.5 Z M18.8 6 12.6 14 h3.4 l-1.7 6.1 6.4 -8.1 h-3.5 Z"/>
+      </svg>
+      <div class="sizes">
+        <svg class="s48" viewBox="0 0 32 32"><defs><linearGradient id="g2b" x1="8" y1="2" x2="26" y2="30"><stop offset="0" stop-color="#5BD4FF"/><stop offset="1" stop-color="#4F8BFF"/></linearGradient></defs><path fill="url(#g2b)" stroke="url(#g2b)" stroke-width="2.4" stroke-linejoin="round" fill-rule="evenodd" d="M9.2 28.8 V3.2 h8.3 a8.55 8.55 0 0 1 0 17.1 h-3.3 v8.5 Z M18.8 6 12.6 14 h3.4 l-1.7 6.1 6.4 -8.1 h-3.5 Z"/></svg>
+        <svg class="s28" viewBox="0 0 32 32"><path fill="#5BD4FF" stroke="#5BD4FF" stroke-width="2.4" stroke-linejoin="round" fill-rule="evenodd" d="M9.2 28.8 V3.2 h8.3 a8.55 8.55 0 0 1 0 17.1 h-3.3 v8.5 Z M18.8 6 12.6 14 h3.4 l-1.7 6.1 6.4 -8.1 h-3.5 Z"/></svg>
+        <svg class="s16" viewBox="0 0 32 32"><path fill="#5BD4FF" stroke="#5BD4FF" stroke-width="2.4" stroke-linejoin="round" fill-rule="evenodd" d="M9.2 28.8 V3.2 h8.3 a8.55 8.55 0 0 1 0 17.1 h-3.3 v8.5 Z M18.8 6 12.6 14 h3.4 l-1.7 6.1 6.4 -8.1 h-3.5 Z"/></svg>
+      </div>
+    </div>
+    <div class="wordmark"><svg viewBox="0 0 32 32"><defs><linearGradient id="g2c" x1="8" y1="2" x2="26" y2="30"><stop offset="0" stop-color="#5BD4FF"/><stop offset="1" stop-color="#4F8BFF"/></linearGradient></defs><path fill="url(#g2c)" stroke="url(#g2c)" stroke-width="2.4" stroke-linejoin="round" fill-rule="evenodd" d="M9.2 28.8 V3.2 h8.3 a8.55 8.55 0 0 1 0 17.1 h-3.3 v8.5 Z M18.8 6 12.6 14 h3.4 l-1.7 6.1 6.4 -8.1 h-3.5 Z"/></svg>PYRION</div>
+    <div class="onlight"><div class="wordmark"><svg viewBox="0 0 32 32"><defs><linearGradient id="g2d" x1="8" y1="2" x2="26" y2="30"><stop offset="0" stop-color="#3B82F6"/><stop offset="1" stop-color="#1D4ED8"/></linearGradient></defs><path fill="url(#g2d)" stroke="url(#g2d)" stroke-width="2.4" stroke-linejoin="round" fill-rule="evenodd" d="M9.2 28.8 V3.2 h8.3 a8.55 8.55 0 0 1 0 17.1 h-3.3 v8.5 Z M18.8 6 12.6 14 h3.4 l-1.7 6.1 6.4 -8.1 h-3.5 Z"/></svg>PYRION</div></div>
+  </div>
+
+  <!-- ====== B3: APP TILE ====== -->
+  <div class="cell">
+    <h2>B3 · Tile lockup</h2>
+    <p>B1 mark reversed inside a rounded tile — the social-avatar / app-icon / favicon presentation. Mark stays identical to B1.</p>
+    <div class="stage">
+      <svg class="big" viewBox="0 0 32 32">
+        <defs><linearGradient id="g3" x1="0" y1="0" x2="32" y2="32"><stop offset="0" stop-color="#15306B"/><stop offset="1" stop-color="#0A0E1A"/></linearGradient></defs>
+        <rect width="32" height="32" rx="7" fill="url(#g3)"/>
+        <rect width="32" height="32" rx="7" fill="none" stroke="#2A3656" stroke-width="0.6"/>
+        <path fill="#5BD4FF" fill-rule="evenodd" transform="translate(3.2 3.2) scale(0.8)" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z M18.8 5.5 12.2 14 h3.6 l-1.8 6.5 6.8 -8.6 h-3.7 Z"/>
+      </svg>
+      <div class="sizes">
+        <svg class="s48" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E1B3A"/><path fill="#5BD4FF" fill-rule="evenodd" transform="translate(3.2 3.2) scale(0.8)" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z M18.8 5.5 12.2 14 h3.6 l-1.8 6.5 6.8 -8.6 h-3.7 Z"/></svg>
+        <svg class="s28" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E1B3A"/><path fill="#5BD4FF" fill-rule="evenodd" transform="translate(3.2 3.2) scale(0.8)" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z M18.8 5.5 12.2 14 h3.6 l-1.8 6.5 6.8 -8.6 h-3.7 Z"/></svg>
+        <svg class="s16" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E1B3A"/><path fill="#5BD4FF" fill-rule="evenodd" transform="translate(3.2 3.2) scale(0.8)" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z M18.8 5.5 12.2 14 h3.6 l-1.8 6.5 6.8 -8.6 h-3.7 Z"/></svg>
+      </div>
+    </div>
+    <div class="wordmark"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E1B3A"/><path fill="#5BD4FF" fill-rule="evenodd" transform="translate(3.2 3.2) scale(0.8)" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z M18.8 5.5 12.2 14 h3.6 l-1.8 6.5 6.8 -8.6 h-3.7 Z"/></svg>PYRION</div>
+    <div class="onlight"><div class="wordmark"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0E1B3A"/><path fill="#5BD4FF" fill-rule="evenodd" transform="translate(3.2 3.2) scale(0.8)" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z M18.8 5.5 12.2 14 h3.6 l-1.8 6.5 6.8 -8.6 h-3.7 Z"/></svg>PYRION</div></div>
+  </div>
+
+  <!-- ====== B4: BOLT SLICE ====== -->
+  <div class="cell">
+    <h2>B4 · Bolt slice</h2>
+    <p>The bolt is not inside the bowl — it severs the whole P diagonally, the gap itself forming the lightning. More abstract, more tension.</p>
+    <div class="stage">
+      <svg class="big" viewBox="0 0 32 32">
+        <defs>
+          <linearGradient id="g4" x1="8" y1="2" x2="26" y2="30"><stop offset="0" stop-color="#5BD4FF"/><stop offset="1" stop-color="#4F8BFF"/></linearGradient>
+          <mask id="m4">
+            <rect width="32" height="32" fill="white"/>
+            <path d="M24 1 L10 15.4 h6.4 L6 28 l2.6 2.6 L23 16.2 h-6.4 L27 4 Z" fill="black" transform="translate(-1.2 0)" />
+          </mask>
+        </defs>
+        <path fill="url(#g4)" mask="url(#m4)" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z"/>
+      </svg>
+      <div class="sizes">
+        <svg class="s48" viewBox="0 0 32 32"><defs><mask id="m4b"><rect width="32" height="32" fill="white"/><path d="M24 1 L10 15.4 h6.4 L6 28 l2.6 2.6 L23 16.2 h-6.4 L27 4 Z" fill="black" transform="translate(-1.2 0)"/></mask></defs><path fill="#5BD4FF" mask="url(#m4b)" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z"/></svg>
+        <svg class="s28" viewBox="0 0 32 32"><defs><mask id="m4c"><rect width="32" height="32" fill="white"/><path d="M24 1 L10 15.4 h6.4 L6 28 l2.6 2.6 L23 16.2 h-6.4 L27 4 Z" fill="black" transform="translate(-1.2 0)"/></mask></defs><path fill="#5BD4FF" mask="url(#m4c)" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z"/></svg>
+        <svg class="s16" viewBox="0 0 32 32"><defs><mask id="m4d"><rect width="32" height="32" fill="white"/><path d="M24 1 L10 15.4 h6.4 L6 28 l2.6 2.6 L23 16.2 h-6.4 L27 4 Z" fill="black" transform="translate(-1.2 0)"/></mask></defs><path fill="#5BD4FF" mask="url(#m4d)" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z"/></svg>
+      </div>
+    </div>
+    <div class="wordmark"><svg viewBox="0 0 32 32"><defs><mask id="m4e"><rect width="32" height="32" fill="white"/><path d="M24 1 L10 15.4 h6.4 L6 28 l2.6 2.6 L23 16.2 h-6.4 L27 4 Z" fill="black" transform="translate(-1.2 0)"/></mask></defs><path fill="#5BD4FF" mask="url(#m4e)" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z"/></svg>PYRION</div>
+    <div class="onlight"><div class="wordmark"><svg viewBox="0 0 32 32"><defs><mask id="m4f"><rect width="32" height="32" fill="white"/><path d="M24 1 L10 15.4 h6.4 L6 28 l2.6 2.6 L23 16.2 h-6.4 L27 4 Z" fill="black" transform="translate(-1.2 0)"/></mask></defs><path fill="#2563EB" mask="url(#m4f)" d="M8 30 V2 h9.5 a9.75 9.75 0 0 1 0 19.5 H13 V30 Z"/></svg>PYRION</div></div>
+  </div>
+
+</div>
+</body>
+</html>
