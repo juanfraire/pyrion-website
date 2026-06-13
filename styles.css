@@ -24,6 +24,13 @@
   --cyan: #5BD4FF;
   --violet: #B58CFF;
 
+  /* Argentine flag accents (shared with the STORM engine site) */
+  --arg-celeste: #75AADB;
+  --arg-celeste-light: #8DC4F0;
+  --arg-white: #FFFFFF;
+  --gold: #F6B40E;
+  --gold-light: #FFD54F;
+
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-disp: 'Space Grotesk', var(--font-sans);
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
@@ -231,7 +238,22 @@ a { color: inherit; }
 
 /* ───────────────────────── sections ─────────────────────── */
 .section { padding: 120px 0; }
-.section-alt { background: var(--bg-1); border-block: 1px solid var(--border-soft); }
+.section-alt { position: relative; background: var(--bg-1); border-block: 1px solid var(--border-soft); }
+
+/* Argentine flag stripe — shared motif with the STORM engine site (storm/styles.css .arg-divider).
+   Sits on the top edge of alternating sections; celeste · white · celeste. */
+.arg-divider,
+.section-alt::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(117, 170, 219, 0.90) 0%,  rgba(117, 170, 219, 0.90) 33%,
+    rgba(230, 237, 247, 0.70) 33%, rgba(230, 237, 247, 0.70) 66%,
+    rgba(117, 170, 219, 0.90) 66%, rgba(117, 170, 219, 0.90) 100%
+  );
+}
+.arg-divider { position: absolute; width: 100%; }
 
 .kicker {
   display: block;
@@ -534,11 +556,16 @@ a { color: inherit; }
   display: grid; grid-template-columns: 1fr auto 1fr;
   align-items: stretch; gap: 18px;
 }
-.impact-card { border-radius: 14px; padding: 22px; border: 1px solid var(--border-soft); }
+.impact-card { position: relative; border-radius: 14px; padding: 22px; border: 1px solid var(--border-soft); overflow: hidden; }
 .impact-today { background: var(--bg-1); }
 .impact-pyrion {
   background: linear-gradient(160deg, rgba(79, 139, 255, 0.14), rgba(15, 21, 36, 0.6));
   border-color: rgba(79, 139, 255, 0.35);
+}
+/* sol de mayo — gold top accent on the value ("with Pyrion") card */
+.impact-pyrion::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
 }
 .impact-label {
   display: inline-block;
