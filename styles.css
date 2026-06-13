@@ -237,21 +237,22 @@ a { color: inherit; }
 }
 
 /* ───────────────────────── sections ─────────────────────── */
-.section { padding: 120px 0; }
-.section-alt { position: relative; background: var(--bg-1); border-block: 1px solid var(--border-soft); }
+.section { padding: 120px 0; position: relative; }
+.section-alt { background: var(--bg-1); border-block: 1px solid var(--border-soft); }
 
 /* Argentine flag stripe — shared motif with the STORM engine site (storm/styles.css .arg-divider).
-   Sits on the top edge of alternating sections; celeste · white · celeste. */
+   Recurs on the top edge of every section; celeste · white · celeste. */
 .arg-divider,
-.section-alt::before {
+.section::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0;
-  height: 3px; pointer-events: none;
+  height: 4px; pointer-events: none;
   background: linear-gradient(90deg,
-    rgba(117, 170, 219, 0.90) 0%,  rgba(117, 170, 219, 0.90) 33%,
-    rgba(230, 237, 247, 0.70) 33%, rgba(230, 237, 247, 0.70) 66%,
-    rgba(117, 170, 219, 0.90) 66%, rgba(117, 170, 219, 0.90) 100%
+    var(--arg-celeste) 0%,  var(--arg-celeste) 33%,
+    var(--arg-white) 33%,   var(--arg-white) 66%,
+    var(--arg-celeste) 66%, var(--arg-celeste) 100%
   );
+  opacity: 0.92;
 }
 .arg-divider { position: absolute; width: 100%; }
 
@@ -477,14 +478,31 @@ a { color: inherit; }
 
 /* ───────────────────────── footer ─────────────────────── */
 .footer {
+  position: relative;
   border-top: 1px solid var(--border-soft);
   padding: 48px 0;
   background: var(--bg-1);
+}
+/* full-width Argentine flag ribbon across the footer top: celeste · white · celeste bands */
+.footer::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+  background: linear-gradient(180deg,
+    var(--arg-celeste) 0 33%, var(--arg-white) 33% 66%, var(--arg-celeste) 66% 100%);
 }
 .footer-inner { display: grid; gap: 10px; }
 .footer p { font-size: 0.86rem; color: var(--text-2); }
 .footer-fine { font-size: 0.76rem !important; color: var(--text-3) !important; }
 .footer-fine a { color: var(--text-3); }
+
+/* Sol de Mayo flag chip — mini Argentine flag (celeste/white/celeste + gold sun) */
+.flag-chip {
+  display: inline-block; width: 26px; height: 17px;
+  border-radius: 3px; vertical-align: -3px; margin-right: 9px;
+  box-shadow: 0 0 0 1px var(--border);
+  background:
+    radial-gradient(circle at 50% 50%, var(--gold-light) 0 1.6px, var(--gold) 1.6px 2.6px, transparent 2.9px),
+    linear-gradient(180deg, var(--arg-celeste) 0 33%, var(--arg-white) 33% 66%, var(--arg-celeste) 66% 100%);
+}
 
 /* ───────────────────────── hero trust line ─────────────────────── */
 .hero-trust {
