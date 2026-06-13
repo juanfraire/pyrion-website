@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Pyrion — final logo chooser</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Sora:wght@600;700&family=Manrope:wght@600;700;800&display=swap" />
+<style>
+  body { margin:0; background:#050810; color:#E6EDF7; font-family:system-ui,sans-serif; padding:30px; }
+  h1 { font-size:1.05rem; margin:0 0 4px; }
+  .sub { color:#6A7488; font-size:.82rem; margin:0 0 26px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; max-width:1080px; }
+  .panel { background:#0F1524; border:1px solid #1E2A44; border-radius:16px; padding:26px; }
+  .panel h2 { font-size:.74rem; color:#4F8BFF; margin:0 0 20px; letter-spacing:.06em; text-transform:uppercase; }
+  .lockup { display:flex; align-items:center; gap:16px; margin-bottom:22px; }
+  .lockup svg { width:46px; height:46px; flex:none; }
+  .wm { font-size:1.85rem; text-transform:uppercase; color:#E6EDF7; }
+  .wm small { display:block; font-size:.6rem; letter-spacing:.05em; color:#6A7488; text-transform:none; margin-top:3px; font-family:system-ui; }
+  .f-grotesk { font-family:'Space Grotesk'; font-weight:600; letter-spacing:.22em; }
+  .f-sora    { font-family:'Sora';          font-weight:600; letter-spacing:.20em; }
+  .f-manrope { font-family:'Manrope';        font-weight:700; letter-spacing:.20em; }
+  .sizes { display:flex; align-items:center; gap:16px; margin-top:8px; padding-top:18px; border-top:1px solid #162038; }
+  .sizes svg { display:block; }
+  .tile { width:46px; height:46px; border-radius:11px; }
+  .lightrow { background:#F2F5FA; border-radius:10px; padding:12px 16px; display:flex; align-items:center; gap:14px; margin-top:14px; }
+  .lightrow svg { width:34px; height:34px; }
+  .lightrow .wm { color:#0A0E1A; font-size:1.4rem; }
+</style>
+</head>
+<body>
+<h1>Pyrion — finalize the logo</h1>
+<p class="sub">Same vectorized mark, two gradient treatments (left = brand-harmonized, right = vivid like the proposal), each with the three wordmark font candidates.</p>
+
+<div class="grid">
+  <!-- ============ GRADIENT A: brand-harmonized ============ -->
+  <div class="panel">
+    <h2>Gradient A · brand-harmonized (#5BD4FF → #4F8BFF)</h2>
+    <div class="lockup"><svg viewBox="0 0 32 32" data-mark="A"></svg><span class="wm f-grotesk">Pyrion<small>Space Grotesk</small></span></div>
+    <div class="lockup"><svg viewBox="0 0 32 32" data-mark="A"></svg><span class="wm f-sora">Pyrion<small>Sora</small></span></div>
+    <div class="lockup"><svg viewBox="0 0 32 32" data-mark="A"></svg><span class="wm f-manrope">Pyrion<small>Manrope</small></span></div>
+    <div class="lightrow"><svg viewBox="0 0 32 32" data-mark="A"></svg><span class="wm f-grotesk">Pyrion</span></div>
+    <div class="sizes">
+      <svg class="tile" viewBox="0 0 32 32" data-tile="A"></svg>
+      <svg width="32" height="32" viewBox="0 0 32 32" data-mark="A"></svg>
+      <svg width="20" height="20" viewBox="0 0 32 32" data-mark="A"></svg>
+      <svg width="16" height="16" viewBox="0 0 32 32" data-mark="A"></svg>
+    </div>
+  </div>
+
+  <!-- ============ GRADIENT B: vivid ============ -->
+  <div class="panel">
+    <h2>Gradient B · vivid like proposal (#4FC8FF → #1E90F0)</h2>
+    <div class="lockup"><svg viewBox="0 0 32 32" data-mark="B"></svg><span class="wm f-grotesk">Pyrion<small>Space Grotesk</small></span></div>
+    <div class="lockup"><svg viewBox="0 0 32 32" data-mark="B"></svg><span class="wm f-sora">Pyrion<small>Sora</small></span></div>
+    <div class="lockup"><svg viewBox="0 0 32 32" data-mark="B"></svg><span class="wm f-manrope">Pyrion<small>Manrope</small></span></div>
+    <div class="lightrow"><svg viewBox="0 0 32 32" data-mark="B"></svg><span class="wm f-sora">Pyrion</span></div>
+    <div class="sizes">
+      <svg class="tile" viewBox="0 0 32 32" data-tile="B"></svg>
+      <svg width="32" height="32" viewBox="0 0 32 32" data-mark="B"></svg>
+      <svg width="20" height="20" viewBox="0 0 32 32" data-mark="B"></svg>
+      <svg width="16" height="16" viewBox="0 0 32 32" data-mark="B"></svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  const grads = {
+    A: { aTop:'#6FE0FF', aBot:'#4F8BFF', bTop:'#4FB6FF', bBot:'#3D6FE6' },
+    B: { aTop:'#5FD2FF', aBot:'#1E90F0', bTop:'#36B4FF', bBot:'#0E73D8' },
+  };
+  function markSVG(key, idp) {
+    const g = grads[key];
+    return `
+      <defs>
+        <linearGradient id="gA-${idp}" x1="8" y1="2" x2="14" y2="26" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="${g.aTop}"/><stop offset="1" stop-color="${g.aBot}"/>
+        </linearGradient>
+        <linearGradient id="gB-${idp}" x1="20" y1="6" x2="22" y2="30" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="${g.bTop}"/><stop offset="1" stop-color="${g.bBot}"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#gA-${idp})" d="M16 2 L21.5 5.1 L12 13 L16.5 15.2 L6.2 22.8 L4 23 L4 9 Z"/>
+      <path fill="url(#gB-${idp})" d="M24.5 7 L15 15 L19.5 17.2 L9.5 24.8 L16 30 L28 23 L28 9 Z"/>`;
+  }
+  let n = 0;
+  document.querySelectorAll('svg[data-mark]').forEach(s => { s.innerHTML = markSVG(s.dataset.mark, 'm'+(n++)); });
+  document.querySelectorAll('svg[data-tile]').forEach(s => {
+    const k = s.dataset.tile;
+    s.innerHTML = `<rect width="32" height="32" rx="7" fill="#0A0E1A"/><g transform="translate(3.2 3.2) scale(0.8)">${markSVG(k,'t'+(n++))}</g>`;
+  });
+</script>
+</body>
+</html>

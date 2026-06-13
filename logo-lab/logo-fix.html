@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Pyrion — logo fix</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0d0f14; color:#ccc; font-family:system-ui,sans-serif; padding:24px; width:1000px; }
+  h1 { font-size:.95rem; margin-bottom:16px; font-weight:600; }
+  .row { display:flex; gap:24px; align-items:flex-start; }
+  .panel { background:#0F1524; border:1px solid #1E2A44; border-radius:14px; padding:18px; }
+  .panel h2 { font-size:.7rem; color:#6A7488; margin-bottom:12px; }
+  img.ref { width:260px; border-radius:10px; display:block; }
+  .stack { display:flex; align-items:center; gap:20px; }
+  .big { width:200px; height:200px; }
+  .s40 { width:40px; height:40px; } .s20 { width:20px; height:20px; }
+  .lightbox { background:#fff; padding:14px; border-radius:10px; }
+</style>
+</head>
+<body>
+<h1>Lower-left edge + center overlap — fixed via shared-centerline facets + stroked-mask gap</h1>
+<div class="row">
+  <div class="panel">
+    <h2>PROPOSAL</h2>
+    <img class="ref" src="proposal-ref.png" alt="ref" />
+  </div>
+  <div class="panel">
+    <h2>NEW VECTOR (dark)</h2>
+    <div class="stack">
+      <svg class="big" viewBox="0 0 32 32" data-mark></svg>
+      <svg class="s40" viewBox="0 0 32 32" data-mark></svg>
+      <svg class="s20" viewBox="0 0 32 32" data-mark></svg>
+    </div>
+  </div>
+  <div class="panel">
+    <h2>NEW (light)</h2>
+    <div class="lightbox"><svg class="big" viewBox="0 0 32 32" data-mark></svg></div>
+  </div>
+</div>
+
+<script>
+  function mark(idp) {
+    return `
+      <defs>
+        <linearGradient id="ga-${idp}" x1="6" y1="3" x2="14" y2="28" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#5FD2FF"/><stop offset="1" stop-color="#2E9BF0"/>
+        </linearGradient>
+        <linearGradient id="gb-${idp}" x1="18" y1="7" x2="24" y2="30" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#3CABF6"/><stop offset="1" stop-color="#0E73D8"/>
+        </linearGradient>
+        <mask id="cut-${idp}">
+          <rect width="32" height="32" fill="white"/>
+          <path d="M22.2 6 L13.5 13.5 L18.5 16.5 L7.6 24.8" fill="none" stroke="black"
+                stroke-width="3.4" stroke-linejoin="miter" stroke-linecap="butt"/>
+        </mask>
+      </defs>
+      <g mask="url(#cut-${idp})">
+        <path fill="url(#ga-${idp})" d="M22.2 6 L13.5 13.5 L18.5 16.5 L7.6 24.8 L4 22.75 L4 9.25 L16 2.5 Z"/>
+        <path fill="url(#gb-${idp})" d="M22.2 6 L13.5 13.5 L18.5 16.5 L7.6 24.8 L16 29.5 L28 22.75 L28 9.25 Z"/>
+      </g>`;
+  }
+  let n = 0;
+  document.querySelectorAll('svg[data-mark]').forEach(s => { s.innerHTML = mark('m' + (n++)); });
+</script>
+</body>
+</html>
