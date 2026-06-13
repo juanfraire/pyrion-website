@@ -461,8 +461,105 @@ a { color: inherit; }
 .footer-fine { font-size: 0.76rem !important; color: var(--text-3) !important; }
 .footer-fine a { color: var(--text-3); }
 
+/* ───────────────────────── hero trust line ─────────────────────── */
+.hero-trust {
+  margin-top: 22px;
+  font: 500 0.82rem var(--font-mono);
+  letter-spacing: 0.03em;
+  color: var(--text-3);
+}
+
+/* ───────────────────────── círculo virtuoso ─────────────────────── */
+.cycle {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 18px; margin-top: 56px; position: relative;
+}
+.phase {
+  position: relative;
+  background: var(--bg-2);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px; padding: 26px 22px;
+  transition: transform 0.4s var(--ease), border-color 0.4s, box-shadow 0.4s;
+}
+.phase:hover {
+  transform: translateY(-5px);
+  border-color: var(--border);
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(79, 139, 255, 0.12);
+}
+.phase:not(:last-child)::after {
+  content: ''; position: absolute; right: -14px; top: 50%; z-index: 2;
+  width: 18px; height: 18px; transform: translateY(-50%);
+  background: var(--bg-1); border: 1px solid var(--border); border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%234F8BFF' stroke-width='3'%3E%3Cpath d='M5 12h14M13 5l7 7-7 7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: center;
+}
+.phase-tag {
+  display: inline-block;
+  font: 600 0.66rem var(--font-mono);
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--azure); margin-bottom: 16px;
+}
+.phase-icon {
+  width: 40px; height: 40px; margin-bottom: 16px;
+  display: grid; place-items: center;
+  color: var(--cyan);
+  background: rgba(79, 139, 255, 0.1);
+  border: 1px solid var(--border); border-radius: 11px;
+}
+.phase-icon svg { width: 20px; height: 20px; }
+.phase h3 { font-family: var(--font-disp); font-size: 1.02rem; margin-bottom: 8px; }
+.phase p { font-size: 0.86rem; color: var(--text-2); }
+
+.cycle-loop {
+  display: flex; align-items: center; gap: 12px; width: fit-content;
+  margin: 30px auto 0; padding: 14px 24px;
+  border: 1px dashed var(--border); border-radius: 999px;
+  background: rgba(79, 139, 255, 0.05);
+  color: var(--text-2); font: 500 0.9rem var(--font-sans);
+}
+.cycle-loop svg { color: var(--cyan); flex: none; }
+
+/* ───────────────────────── impacto financiero ─────────────────────── */
+.impact {
+  margin: 14px 0 44px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 18px; padding: 32px;
+}
+.impact-title { font-family: var(--font-disp); font-size: 1.15rem; margin-bottom: 22px; }
+.impact-compare {
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: stretch; gap: 18px;
+}
+.impact-card { border-radius: 14px; padding: 22px; border: 1px solid var(--border-soft); }
+.impact-today { background: var(--bg-1); }
+.impact-pyrion {
+  background: linear-gradient(160deg, rgba(79, 139, 255, 0.14), rgba(15, 21, 36, 0.6));
+  border-color: rgba(79, 139, 255, 0.35);
+}
+.impact-label {
+  display: inline-block;
+  font: 600 0.72rem var(--font-mono);
+  letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px;
+}
+.impact-today .impact-label { color: var(--text-3); }
+.impact-pyrion .impact-label { color: var(--cyan); }
+.impact-card p { font-size: 0.92rem; color: var(--text-2); }
+.impact-pyrion p { color: var(--text-1); }
+.impact-arrow { display: grid; place-items: center; color: var(--azure); }
+.impact-fee {
+  margin-top: 22px; padding-top: 20px;
+  border-top: 1px solid var(--border-soft);
+  font-size: 1rem; color: var(--text-2);
+}
+.impact-fee strong { color: var(--cyan); font-weight: 600; }
+
 /* ───────────────────────── responsive ─────────────────────── */
 @media (max-width: 960px) {
+  .cycle { grid-template-columns: 1fr 1fr; }
+  .phase:not(:last-child)::after { display: none; }
+  .impact-compare { grid-template-columns: 1fr; }
+  .impact-arrow svg { transform: rotate(90deg); }
   .nav-links { display: none; }
   .cards-3 { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
@@ -478,6 +575,7 @@ a { color: inherit; }
   .steps { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .dash-kpis { grid-template-columns: 1fr; }
+  .cycle { grid-template-columns: 1fr; }
 }
 
 /* reduced motion */
